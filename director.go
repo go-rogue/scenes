@@ -1,7 +1,8 @@
 package scenes
 
 type Director struct {
-	scenes *Stack
+	scenes     *Stack
+	ShouldQuit bool
 }
 
 func (e *Director) PushState(scene IScene) error {

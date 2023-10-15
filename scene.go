@@ -11,7 +11,6 @@ type IScene interface {
 type Scene struct {
 	Director *Director
 	Name     string
-	Quit     bool
 }
 
 func (s *Scene) Pushed(director *Director) error {
@@ -31,6 +30,7 @@ func (s *Scene) GetName() string {
 	return s.Name
 }
 
+// ShouldQuit is deprecated, use ShouldQuit on Director instead
 func (s *Scene) ShouldQuit() bool {
-	return s.Quit
+	return s.Director.ShouldQuit
 }
