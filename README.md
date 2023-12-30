@@ -9,7 +9,7 @@ This package provides a Scene interface and Scene Director struct for use in gam
 
 The Scene Director operates on structs implementing `IScene` however this interface intentionally doesn't provide an `update` or `draw` methods. That is up to you to implement in your extension to `IScene`.
 
-For example you might have your own `Scene` interface such as:
+For example, you might have your own `Scene` interface such as:
 
 ```go
 type Scene interface {
@@ -25,3 +25,5 @@ You would then cast the return of `PeekState()` to your required interface like 
 scene := director.PeekState().(Scene)
 scene.Draw()
 ```
+
+A full working demonstration can be found at https://github.com/go-rogue/scenes-demo
