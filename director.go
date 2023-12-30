@@ -15,7 +15,7 @@ func (e *Director) PushState(scene IScene) error {
 }
 
 func (e *Director) PopState() error {
-	err := e.PeekState().Popped(e)
+	err := e.PeekState().(IScene).Popped(e)
 	if err != nil {
 		return err
 	}
@@ -33,11 +33,11 @@ func (e *Director) ChangeState(scene IScene) error {
 	return e.PushState(scene)
 }
 
-func (e *Director) PeekState() IScene {
+func (e *Director) PeekState() interface{} {
 	if e.scenes.Len() == 0 {
 		return nil
 	}
-	return e.scenes.Peek().(IScene)
+	return e.scenes.Peek()
 }
 
 func NewDirector(initialScene IScene) *Director {

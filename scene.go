@@ -5,7 +5,6 @@ type IScene interface {
 	Popped(director *Director) error // Executed when the state is popped off of the StateMachine stack
 	Tick(dt float32)
 	GetName() string
-	ShouldQuit() bool
 }
 
 type Scene struct {
@@ -28,9 +27,4 @@ func (s *Scene) Tick(dt float32) {
 
 func (s *Scene) GetName() string {
 	return s.Name
-}
-
-// ShouldQuit is deprecated, use ShouldQuit on Director instead
-func (s *Scene) ShouldQuit() bool {
-	return s.Director.ShouldQuit
 }
