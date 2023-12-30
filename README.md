@@ -1,6 +1,7 @@
 # Scenes
 
 <a href="https://pkg.go.dev/github.com/go-rogue/scenes?tab=doc"><img src="https://godoc.org/github.com/golang/gddo?status.svg" alt="GoDoc"></a>
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 This package provides a Scene interface and Scene Director struct for use in game dev. The stack it uses is thread safe.
 
